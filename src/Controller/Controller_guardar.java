@@ -15,7 +15,7 @@ public class Controller_guardar implements ActionListener {
 
     public Controller_guardar(Frm_Registro r) {
         this.r = r;
-        // this.r.Boton().addComponentListener((ComponentListener) this);
+        this.r.Boton().addComponentListener((ComponentListener) this);
     }
 
     @Override
