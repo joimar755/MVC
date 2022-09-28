@@ -20,6 +20,7 @@ public class Controller_guardar implements ActionListener {
         // this.button = button;
 
         this.r.boton.addActionListener(this);
+        this.r.Boton_login.addActionListener(this);
     }
 
     /**
@@ -28,31 +29,18 @@ public class Controller_guardar implements ActionListener {
     public void Frm_Registro_1() {
         r.setSize(800, 400);
         r.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-
-        /*
-         * r.boton.addActionListener(new ActionListener() {
-         * 
-         * @Override
-         * public void actionPerformed(ActionEvent e) {
-         * if (e.getSource() == r.boton) {
-         * 
-         * // System.out.println(6);
-         * }
-         * 
-         * }
-         * 
-         * });
-         */
-        // r.IniciarComponentes();
-
+        r.setVisible(true);
+        r.setTitle("Registro");
     }
 
     @Override
 
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == r.boton) {
-
             System.out.println(6 + 6);
+        }
+        if (e.getSource() == r.Boton_login) {
+            System.out.println(8 * 9);
         }
     }
 

@@ -13,7 +13,7 @@ public class App {
         Controller_guardar ctl = new Controller_guardar(f, boton);
         ctl.Frm_Registro_1();
 
-        f.setVisible(true);
-        f.setTitle("Registro");
+        // f.setVisible(true);
+        // f.setTitle("Registro");
     }
 }

@@ -15,14 +15,14 @@ import java.awt.Container.*;
 
 public class Frm_Registro extends JFrame {
     public JButton boton;
+    public JButton Boton_login;
     JPanel JP = new JPanel();
     Container cp = getContentPane();
 
     public Frm_Registro() {
-        setSize(800, 400);
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        // setSize(800, 400);
+        // setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         IniciarComponentes();
-
     }
 
     /**
@@ -70,10 +70,13 @@ public class Frm_Registro extends JFrame {
 
     public void Boton() {
         boton = new JButton("agregar");
+        Boton_login = new JButton("ir a login");
 
         // boton.addActionListener(new Boton_Registrar());
         // JPanel JP = new JPanel();
+        boton.setBounds(200, 30, 100, 50);
         JP.add(boton);
+        JP.add(Boton_login);
         // cp.add(JP, BorderLayout.CENTER);
         // return boton;
     }
