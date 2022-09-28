@@ -14,11 +14,15 @@ import java.awt.event.*;
 import java.awt.Container.*;
 
 public class Frm_Registro extends JFrame {
+    public JButton boton;
+    JPanel JP = new JPanel();
+    Container cp = getContentPane();
 
     public Frm_Registro() {
         setSize(800, 400);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         IniciarComponentes();
+
     }
 
     /**
@@ -33,10 +37,10 @@ public class Frm_Registro extends JFrame {
      * 
      */
     public void Formulario() {
-        Container cp = getContentPane();
+        // Container cp = getContentPane();
         cp.setLayout(new FlowLayout());
-        GridLayout gl = new GridLayout(4, 3, 0, 5);
-        JPanel JP = new JPanel();
+
+        GridLayout gl = new GridLayout(12, 6, 0, 5);
 
         JLabel Lbl_Nombre = new JLabel("Nomnbre: ");
         JTextField Txt_Nombre = new JTextField(20);
@@ -46,8 +50,8 @@ public class Frm_Registro extends JFrame {
 
         JLabel Lbl_Password = new JLabel("Contraseña: ");
         JPasswordField Txt_Password = new JPasswordField(20);
-        Boton();
-        // JButton boton = new JButton("agregar");
+        // button = new JButton("prueba");
+
         // boton.addActionListener(new Boton_Registrar());
         JP.setLayout(gl);
 
@@ -57,17 +61,21 @@ public class Frm_Registro extends JFrame {
         JP.add(Txt_apellido);
         JP.add(Lbl_Password);
         JP.add(Txt_Password);
-        JP.add(Boton());
+        // JP.add(Boton());
+        // JP.add(boton);
+        Boton();
 
         cp.add(JP, BorderLayout.CENTER);
     }
 
-    public Component Boton() {
-        JButton boton = new JButton("agregar");
+    public void Boton() {
+        boton = new JButton("agregar");
+
         // boton.addActionListener(new Boton_Registrar());
         // JPanel JP = new JPanel();
-        // JP.add(boton);
-        return boton;
+        JP.add(boton);
+        // cp.add(JP, BorderLayout.CENTER);
+        // return boton;
     }
 
     public class Boton_Registrar implements ActionListener {
