@@ -1,21 +1,27 @@
 package vista;
 
 import javax.swing.JButton;
+import javax.swing.JComponent;
+import javax.swing.JFormattedTextField;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
-import javax.swing.border.Border;
-import javax.swing.event.AncestorEvent;
-
 import java.awt.*;
 import java.awt.event.*;
+import java.sql.Date;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.awt.Container.*;
 
 public class Frm_Registro extends JFrame {
     public JButton boton;
     public JButton Boton_login;
+    public JTextField Txt_Nombre;
+    public JTextField Txt_apellido;
+    public JPasswordField Txt_Password;
+
     JPanel JP = new JPanel();
     Container cp = getContentPane();
 
@@ -43,13 +49,14 @@ public class Frm_Registro extends JFrame {
         GridLayout gl = new GridLayout(12, 6, 0, 5);
 
         JLabel Lbl_Nombre = new JLabel("Nomnbre: ");
-        JTextField Txt_Nombre = new JTextField(20);
+        Txt_Nombre = new JTextField(20);
 
         JLabel Lbl_Apellido = new JLabel("Apellido: ");
-        JTextField Txt_apellido = new JTextField(20);
+        Txt_apellido = new JTextField(20);
 
         JLabel Lbl_Password = new JLabel("Contraseña: ");
-        JPasswordField Txt_Password = new JPasswordField(20);
+        Txt_Password = new JPasswordField(20);
+
         // button = new JButton("prueba");
 
         // boton.addActionListener(new Boton_Registrar());
@@ -61,6 +68,7 @@ public class Frm_Registro extends JFrame {
         JP.add(Txt_apellido);
         JP.add(Lbl_Password);
         JP.add(Txt_Password);
+
         // JP.add(Boton());
         // JP.add(boton);
         Boton();
@@ -74,21 +82,11 @@ public class Frm_Registro extends JFrame {
 
         // boton.addActionListener(new Boton_Registrar());
         // JPanel JP = new JPanel();
-        boton.setBounds(200, 30, 100, 50);
+        // boton.setBounds(200, 30, 100, 50);
         JP.add(boton);
         JP.add(Boton_login);
         // cp.add(JP, BorderLayout.CENTER);
         // return boton;
-    }
-
-    public class Boton_Registrar implements ActionListener {
-
-        @Override
-        public void actionPerformed(ActionEvent e) {
-            // TODO Auto-generated method stub
-            System.out.println("ok");
-        }
-
     }
 
 }
