@@ -31,7 +31,7 @@ public class Controller_guardar implements ActionListener {
      * 
      */
     public void Frm_Registro_1() {
-        r.setSize(800, 400);
+        r.setSize(1180, 500);
         r.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         r.setVisible(true);
         r.setTitle("Registro");
@@ -54,7 +54,17 @@ public class Controller_guardar implements ActionListener {
             login.setTitle("login");
             login.setVisible(true);
         }
+
     }
+
+    /*
+     * public void Validar() {
+     * r.setVisible(false);
+     * login.setLocationRelativeTo(null);
+     * login.setTitle("login");
+     * login.setVisible(true);
+     * }
+     */
 
     /**
     * 
