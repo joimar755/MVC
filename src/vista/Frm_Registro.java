@@ -60,7 +60,7 @@ public class Frm_Registro extends JFrame {
         // Container cp = getContentPane();
         cp.setLayout(new FlowLayout());
 
-        GridLayout gl = new GridLayout(14, 60, 45, 5);
+        GridLayout gl = new GridLayout(30, 20, 45, 5);
 
         JLabel Lbl_Nombre = new JLabel("Nomnbre: ");
         Txt_Nombre = new JTextField(20);
