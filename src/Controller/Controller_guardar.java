@@ -6,68 +6,52 @@ import java.awt.event.*;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
+import javax.swing.JPasswordField;
+import javax.swing.JTextField;
+import javax.swing.JButton;
 
 import vista.Frm_Registro;
 //import java.awt.Container.*;
 //import vista.Frm_Registro.Boton_Registrar;
 import vista.Frm_login;
 
-public class Controller_guardar implements ActionListener {
-    private Frm_Registro r;
-    private Frm_login login;
+public class Controller_guardar {
+    private JButton button;
+    private JTextField Txt_Nombre;
+    private JTextField Txt_apellido;
+    private JPasswordField Txt_Password;
 
     // private JButton button;
 
-    public Controller_guardar(Frm_Registro r, JButton button, Frm_login login) {
-        this.r = r;
-        this.login = login;
-        // this.button = button;
+    public Controller_guardar(JButton boton, JTextField Txt_Nombre, JTextField Txt_apellido,
+            JPasswordField Txt_Password) {
 
-        this.r.boton.addActionListener(this);
-        this.r.Boton_login.addActionListener(this);
+        this.button = boton;
+        this.Txt_Nombre = Txt_Nombre;
+        this.Txt_apellido = Txt_apellido;
+        this.Txt_Password = Txt_Password;
+        JButton boton2 = new JButton();
+
     }
 
-    /**
-     * 
-     */
-    public void Frm_Registro_1() {
-        r.setSize(1180, 500);
-        r.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        r.setVisible(true);
-        r.setTitle("Registro");
-    }
+    public void t() {
+        ActionListener rt = new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                System.out.println("Hola mundo");
+                // if (e.getSource() == button) {
+                // // System.out.println(6 + 6);
+                // if (Txt_Nombre.getText().length() == 0 || Txt_apellido.getText().length() ==
+                // 0
+                // || Txt_Password.getText().length() == 0) {
+                // JOptionPane.showMessageDialog(null, "ingrese texto");
+                // } else {
 
-    @Override
+                // }
 
-    public void actionPerformed(ActionEvent e) {
-        if (e.getSource() == r.boton) {
-            // System.out.println(6 + 6);
-            if (r.Txt_Nombre.getText().length() == 0 || r.Txt_apellido.getText().length() == 0
-                    || r.Txt_Password.getText().length() == 0) {
-                JOptionPane.showMessageDialog(null, "ingrese texto");
             }
-
-        }
-        if (e.getSource() == r.Boton_login) {
-            r.setVisible(false);
-            login.setLocationRelativeTo(null);
-            login.setTitle("login");
-            login.setVisible(true);
-        }
-
+        };
+        this.button.addActionListener(rt);
     }
-
-    /*
-     * public void Validar() {
-     * r.setVisible(false);
-     * login.setLocationRelativeTo(null);
-     * login.setTitle("login");
-     * login.setVisible(true);
-     * }
-     */
-
-    /**
-    * 
-    */
 
 }

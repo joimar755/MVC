@@ -9,56 +9,60 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
+
+import Controller.Controller_guardar;
+
 import java.awt.*;
 import java.awt.event.*;
 import java.sql.Date;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
-import java.util.concurrent.Flow;
-import java.awt.Container.*;
+
+//import java.util.concurrent.Flow;
 
 public class Frm_Registro extends JFrame {
-    public JButton boton;
-    public JButton Boton_login;
-    public JTextField Txt_Nombre;
-    public JTextField Txt_apellido;
-    public JTextField Txt_Correo;
-    public JTextField Txt_Direccion;
-    public JTextField Txt_Barrio;
-    public JLabel genero;
-    public JPasswordField Txt_Password;
-    public JComboBox Genero;
-    public JComboBox departamento;
-    public JComboBox municipio;
+    private JButton boton;
+    private JButton Boton_login;
+    private JTextField Txt_Nombre;
+    private JTextField Txt_apellido;
+    private JTextField Txt_Correo;
+    private JTextField Txt_Direccion;
+    private JTextField Txt_Barrio;
+    private JLabel genero;
+    private JPasswordField Txt_Password;
+    private JComboBox Genero;
+    private JComboBox departamento;
+    private JComboBox municipio;
 
-    JPanel JP = new JPanel();
-    JPanel JP_1 = new JPanel();
-    JPanel Botones = new JPanel();
-    JPanel Fecha = new JPanel();
-    Container cp = getContentPane();
-    FlowLayout fl = new FlowLayout();
-    FlowLayout f2 = new FlowLayout();
+    private JPanel JP;
+
+    private FlowLayout fl = new FlowLayout();
 
     public Frm_Registro() {
         // setSize(800, 400);
-        // setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         IniciarComponentes();
+
     }
 
     /**
      * 
      */
     public void IniciarComponentes() {
-        Formulario();
+        JP = new JPanel();
+        JP.setLayout(null);
+        this.getContentPane().add(JP);
+
+        Formulario(JP);
         // Boton();
     }
 
     /**
      * 
      */
-    public void Formulario() {
-        // Container cp = getContentPane();
-        cp.setLayout(new FlowLayout());
+    public void Formulario(JPanel JP) {
+        // Container JP = getContentPane();
+        JP.setLayout(new FlowLayout());
 
         GridLayout gl = new GridLayout(30, 20, 45, 5);
 
@@ -92,43 +96,43 @@ public class Frm_Registro extends JFrame {
         JP.add(Txt_Correo);
         JP.add(Direccion);
         JP.add(Txt_Direccion);
-        JP.add(Fecha);
-        Listas();
+        // Listas();
 
         // JP.add(Boton());
         // JP.add(boton);
-        Boton();
-        Fecha();
+        Boton(JP, Txt_Nombre, Txt_apellido, Txt_Password);
+        Fecha(JP);
 
-        cp.add(JP, BorderLayout.EAST);
-        cp.add(Botones, BorderLayout.SOUTH);
+        // JP.add(JP, BorderLayout.EAST);
 
     }
 
-    public void Boton() {
-        Botones.setLayout(fl);
+    public void Boton(JPanel JP, JTextField Txt_Nombre, JTextField Txt_apellido, JPasswordField Txt_Password) {
+        // Botones.setLayout(fl);
         boton = new JButton("agregar");
+
+        Controller_guardar ctl = new Controller_guardar(boton, Txt_Nombre, Txt_apellido, Txt_Password);
+
         Boton_login = new JButton("ir a login");
 
         // boton.addActionListener(new Boton_Registrar());
         // JPanel JP = new JPanel();
-        // boton.setBounds(200, 30, 100, 50);
-        Botones.add(boton);
-        Botones.add(Boton_login);
 
-        // cp.add(JP, BorderLayout.SOUTH);
-        // return boton;
+        JP.add(boton);
+        JP.add(Boton_login);
+
+        // JP.add(JP, BorderLayout.SOUTH);
+        // return boton;|
     }
 
-    public void Fecha() {
-        Fecha.setLayout(fl);
-        Fecha.add(new JTextField(2));
-        Fecha.add(new JLabel("/"));
-        Fecha.add(new JTextField(2));
-        Fecha.add(new JLabel("/"));
-        Fecha.add(new JTextField(2));
-        // cp.add(Fecha);
-        // cp.add(Fecha, BorderLayout.CENTER);
+    public void Fecha(JPanel JP) {
+        JP.add(new JTextField(2));
+        JP.add(new JLabel("/"));
+        JP.add(new JTextField(2));
+        JP.add(new JLabel("/"));
+        JP.add(new JTextField(2));
+        // JP.add(Fecha);
+        // JP.add(Fecha, BorderLayout.CENTER);
     }
 
     public void Listas() {
