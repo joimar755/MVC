@@ -1,3 +1,4 @@
+import javax.swing.JButton;
 
 import vista.Frm_Registro;
 import vista.Frm_login;
@@ -7,7 +8,7 @@ public class App {
         // System.out.println("Hello, World!");
         Frm_Registro f = new Frm_Registro();
         Frm_login login = new Frm_login();
-
+        JButton boton = new JButton();
         // JButton button = new JButton();
 
         f.setVisible(true);

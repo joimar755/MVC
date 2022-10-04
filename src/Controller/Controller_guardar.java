@@ -20,6 +20,7 @@ public class Controller_guardar {
     private JTextField Txt_Nombre;
     private JTextField Txt_apellido;
     private JPasswordField Txt_Password;
+    private Frm_Registro r;
 
     // private JButton button;
 

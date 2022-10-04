@@ -21,7 +21,7 @@ import java.text.SimpleDateFormat;
 //import java.util.concurrent.Flow;
 
 public class Frm_Registro extends JFrame {
-    private JButton boton;
+    public JButton boton;
     private JButton Boton_login;
     private JTextField Txt_Nombre;
     private JTextField Txt_apellido;
