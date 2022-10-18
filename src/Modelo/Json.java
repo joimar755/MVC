@@ -6,13 +6,13 @@ import java.io.FileReader;
 import java.io.IOException;
 import javax.swing.JFrame;
 
-import org.json.simple.parser.JSONParser;
+//import org.json.simple.parser.JSONParser;
 
 import com.google.gson.Gson;
 
 public class Json extends JFrame {
 
-    JSONParser p = new JSONParser();
+    // JsonParser p = new JsonParser();
     String json = "";
 
     public void JsonFile() throws IOException {
@@ -22,7 +22,7 @@ public class Json extends JFrame {
 
         try {
             BufferedReader br = new BufferedReader(
-                    new FileReader("C:/Users/Joimar/Documents/NetBeansProjects/MVC-1/Depa.json"));
+                    new FileReader("Depa.json"));
             String linea = "";
             while ((linea = br.readLine()) != null) {
                 json += linea;

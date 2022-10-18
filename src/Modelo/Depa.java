@@ -1,17 +1,23 @@
 package Modelo;
 
 public class Depa {
-    private String nombre;
+    private String[] nombre;
 
-    public Depa(String nombre) {
-        this.nombre = nombre;
+    public Depa() {
+        nombre = new String[32];
+
     }
 
-    public String getNombre() {
+    public Depa(String[] nombre) {
+        this.nombre = nombre;
+
+    }
+
+    public String[] getNombre() {
         return nombre;
     }
 
-    public void setNombre(String nombre) {
+    public void setNombre(String[] nombre) {
         this.nombre = nombre;
     }
 
@@ -20,6 +26,10 @@ public class Depa {
         return "{" +
                 " nombre='" + getNombre() + "'" +
                 "}";
+    }
+
+    public void Cargar_depa() {
+
     }
 
 }
