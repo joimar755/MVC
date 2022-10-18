@@ -1,13 +1,13 @@
 package vista;
 
+import java.io.IOException;
+
 import javax.swing.*;
 
-import com.toedter.calendar.JCalendar;
 import com.toedter.calendar.JDateChooser;
 
-import java.awt.Color;
-
 import Controller.Controller_guardar;
+import Modelo.Json;
 
 public class Frm_Registro extends JFrame {
     private JPanel container;
@@ -19,12 +19,12 @@ public class Frm_Registro extends JFrame {
     private JTextField Txt_Direccion;
     private JPasswordField Txt_Password;
     private JComboBox Genero;
-    private JComboBox departamento;
+    public JComboBox<String> departamento;
     private JComboBox municipio;
     private Controller_guardar controllerRegistrar;
     private JDateChooser calendar;
 
-    public Frm_Registro() {
+    public Frm_Registro() throws IOException {
         setSize(800, 530);
         setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         controllerRegistrar = new Controller_guardar();
@@ -33,7 +33,7 @@ public class Frm_Registro extends JFrame {
 
     }
 
-    public void run() {
+    public void run() throws IOException {
         container = new JPanel();
         container.setLayout(null);
 
@@ -115,7 +115,9 @@ public class Frm_Registro extends JFrame {
         container.add(calendar);
     }
 
-    public void Listas(JPanel container) {
+    public void Listas(JPanel container) throws IOException {
+        Json l = new Json();
+        l.JsonFile();
         String[] Sexo = { "Seleccione una opcion", "Masculino", "Femenino" };
         String[] Depa = { "Seleccione", "Atlantico" };
         String[] Muni = { "Seleccione", "Barranquilla" };
@@ -126,7 +128,7 @@ public class Frm_Registro extends JFrame {
 
         JLabel d = new JLabel("departamento: ");
         d.setBounds(70, 250, 200, 25);
-        departamento = new JComboBox<>(Depa);
+        departamento = new JComboBox<String>(Depa);
         departamento.setBounds(70, 270, 100, 25);
         JLabel m = new JLabel("municipio: ");
         m.setBounds(250, 250, 200, 25);

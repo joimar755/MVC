@@ -2,6 +2,8 @@ package Controller;
 
 import javax.swing.*;
 
+import Modelo.Json;
+import vista.Frm_Registro;
 import vista.Frm_login;
 
 import java.awt.event.*;

@@ -8,4 +8,11 @@
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
   </component>
+  <dependencies>
+   <dependency>
+    <groupid>com.google.code.gson</groupid>
+    <artifactid>gson</artifactid>
+    <version>2.8.0</version>
+</dependency>
+  </dependencies>
 </module>

@@ -1,0 +1,44 @@
+package Modelo;
+
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+import javax.swing.JFrame;
+
+import org.json.simple.parser.JSONParser;
+
+import com.google.gson.Gson;
+
+public class Json extends JFrame {
+
+    JSONParser p = new JSONParser();
+    String json = "";
+
+    public void JsonFile() throws IOException {
+        setSize(900, 400);
+        setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        // FileReader("C:/Users/Joimar/Documents/NetBeansProjects/MVC-1/Depa.json"));
+
+        try {
+            BufferedReader br = new BufferedReader(
+                    new FileReader("C:/Users/Joimar/Documents/NetBeansProjects/MVC-1/Depa.json"));
+            String linea = "";
+            while ((linea = br.readLine()) != null) {
+                json += linea;
+            }
+            br.close();
+        } catch (FileNotFoundException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+        // System.out.println(json);
+        Gson gson = new Gson();
+
+        Depa d = gson.fromJson(json, Depa.class);
+        // d.setNombre("Atlantico");
+        System.out.println(d.getNombre());
+
+    }
+
+}
