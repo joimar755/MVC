@@ -7,10 +7,11 @@ import javax.swing.*;
 import com.toedter.calendar.JDateChooser;
 
 import Controller.Controller_guardar;
+import Modelo.Depa;
 import Modelo.Json;
 
 public class Frm_Registro extends JFrame {
-    private JPanel container;
+    // private Panel container;
     private JButton boton;
     private JButton Boton_login;
     private JTextField Txt_Nombre;
@@ -34,7 +35,7 @@ public class Frm_Registro extends JFrame {
     }
 
     public void run() throws IOException {
-        container = new JPanel();
+        Panel container = new Panel();
         container.setLayout(null);
 
         Formulario(container);
@@ -116,8 +117,7 @@ public class Frm_Registro extends JFrame {
     }
 
     public void Listas(JPanel container) throws IOException {
-        Json l = new Json();
-        l.JsonFile();
+
         String[] Sexo = { "Seleccione una opcion", "Masculino", "Femenino" };
         String[] Depa = { "Seleccione", "Atlantico" };
         String[] Muni = { "Seleccione", "Barranquilla" };
@@ -128,7 +128,11 @@ public class Frm_Registro extends JFrame {
 
         JLabel d = new JLabel("departamento: ");
         d.setBounds(70, 250, 200, 25);
-        departamento = new JComboBox<String>(Depa);
+        departamento = new JComboBox<String>();
+        for (String items : Depa) {
+            departamento.addItem(items);
+        }
+
         departamento.setBounds(70, 270, 100, 25);
         JLabel m = new JLabel("municipio: ");
         m.setBounds(250, 250, 200, 25);

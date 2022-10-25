@@ -4,13 +4,9 @@ public class Depa {
     private String[] nombre;
 
     public Depa() {
-        nombre = new String[32];
-
-    }
-
-    public Depa(String[] nombre) {
-        this.nombre = nombre;
-
+        this.nombre = new String[2];
+        this.nombre[0] = "Atlantico";
+        this.nombre[1] = "Amazonas";
     }
 
     public String[] getNombre() {
@@ -21,15 +17,19 @@ public class Depa {
         this.nombre = nombre;
     }
 
+    public void Cargar_depa() {
+
+        for (int i = 0; i < nombre.length; i++) {
+            System.out.println(this.nombre[i]);
+        }
+
+    }
+
     @Override
     public String toString() {
         return "{" +
                 " nombre='" + getNombre() + "'" +
                 "}";
-    }
-
-    public void Cargar_depa() {
-
     }
 
 }

@@ -1,4 +1,5 @@
 
+import Modelo.Depa;
 import vista.Frm_Registro;
 // import vista.Frm_login;
 
@@ -9,6 +10,8 @@ public class App {
         // Json j = new Json();
         // j.JsonFile();
         // Frm_login login = new Frm_login();
+        Depa d = new Depa();
+        d.Cargar_depa();
 
         // JButton button = new JButton();
 
