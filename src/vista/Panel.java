@@ -1,12 +1,14 @@
 package vista;
 
+import java.awt.Color;
+
 import javax.swing.JPanel;
 
 public class Panel extends JPanel {
 
     public Panel() {
-        JPanel panel = new JPanel();
-        panel.setLayout(null);
+        setLayout(null);
+        // setBackground(Color.BLACK);
 
     }
 }

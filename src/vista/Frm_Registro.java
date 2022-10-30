@@ -11,7 +11,7 @@ import Modelo.Depa;
 import Modelo.Json;
 
 public class Frm_Registro extends JFrame {
-    // private Panel container;
+    private Panel container;
     private JButton boton;
     private JButton Boton_login;
     private JTextField Txt_Nombre;
@@ -35,8 +35,8 @@ public class Frm_Registro extends JFrame {
     }
 
     public void run() throws IOException {
-        Panel container = new Panel();
-        container.setLayout(null);
+        container = new Panel();
+        // container.setLayout(null);
 
         Formulario(container);
         Fecha(container);
