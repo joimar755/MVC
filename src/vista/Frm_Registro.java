@@ -117,7 +117,8 @@ public class Frm_Registro extends JFrame {
     }
 
     public void Listas(JPanel container) throws IOException {
-
+        Depa de = new Depa();
+        de.Cargar_depa();
         String[] Sexo = { "Seleccione una opcion", "Masculino", "Femenino" };
         String[] Depa = { "Seleccione", "Atlantico" };
         String[] Muni = { "Seleccione", "Barranquilla" };

@@ -4,9 +4,13 @@ public class Depa {
     private String[] nombre;
 
     public Depa() {
-        this.nombre = new String[2];
-        this.nombre[0] = "Atlantico";
-        this.nombre[1] = "Amazonas";
+        this.nombre = new String[6];
+        this.nombre[0] = "Amazonas";
+        this.nombre[1] = "Antioquia";
+        this.nombre[2] = "Arauca";
+        this.nombre[3] = "Atlantico";
+        this.nombre[4] = "Bolivar";
+        this.nombre[5] = "Boyaca";
     }
 
     public String[] getNombre() {
@@ -21,6 +25,7 @@ public class Depa {
 
         for (int i = 0; i < nombre.length; i++) {
             System.out.println(this.nombre[i]);
+
         }
 
     }
