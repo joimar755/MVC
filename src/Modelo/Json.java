@@ -9,10 +9,11 @@ import javax.swing.JFrame;
 //import org.json.simple.parser.JSONParser;
 
 import com.google.gson.Gson;
+import com.google.gson.JsonParser;
 
 public class Json extends JFrame {
 
-    // JsonParser p = new JsonParser();
+    JsonParser p = new JsonParser();
     String json = "";
 
     public void JsonFile() throws IOException {
@@ -33,11 +34,6 @@ public class Json extends JFrame {
             e.printStackTrace();
         }
         // System.out.println(json);
-        Gson gson = new Gson();
-
-        Depa d = gson.fromJson(json, Depa.class);
-        // d.setNombre("Atlantico");
-        System.out.println(d.getNombre());
 
     }
 

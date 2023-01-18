@@ -13,6 +13,7 @@ public class Controller_guardar implements ActionListener {
     private JTextField Txt_Nombre;
     private JTextField Txt_apellido;
     private JPasswordField Txt_Password;
+    private Frm_Registro r;
 
     @Override
     public void actionPerformed(ActionEvent e) {

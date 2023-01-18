@@ -1,11 +1,10 @@
 {
-    "java.project.sourcePaths": ["src"],
-    "java.project.outputPath": "bin",
+    "java.project.sourcePaths": [
+        "src"
+    ],
     "java.project.referencedLibraries": [
         "lib/**/*.jar",
         "jcalendar-1.4.jar",
-        "c:\\Users\\Joimar\\Desktop\\Leer-JSON-JSONSimple-JAVA\\json-simple-1.1.1.jar",
         "gson-2.8.2.jar"
-    ],
-    "git.autoStash": true
+    ]
 }

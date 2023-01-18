@@ -118,7 +118,8 @@ public class Frm_Registro extends JFrame {
 
     public void Listas(JPanel container) throws IOException {
         Depa de = new Depa();
-        de.Cargar_depa();
+        Json j = new Json();
+        j.JsonFile();
         String[] Sexo = { "Seleccione una opcion", "Masculino", "Femenino" };
         String[] Depa = { "Seleccione", "Atlantico" };
         String[] Muni = { "Seleccione", "Barranquilla" };
@@ -130,7 +131,8 @@ public class Frm_Registro extends JFrame {
         JLabel d = new JLabel("departamento: ");
         d.setBounds(70, 250, 200, 25);
         departamento = new JComboBox<String>();
-        for (String items : Depa) {
+
+        for (String items : de.getNombre()) {
             departamento.addItem(items);
         }
 
