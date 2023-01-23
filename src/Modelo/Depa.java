@@ -27,8 +27,8 @@ public class Depa {
         return nombre;
     }
 
-    public void setNombre(String[] nombre) {
-        this.nombre = nombre;
+    public void setNombre(String[] string) {
+        this.nombre = string;
     }
 
     @Override
@@ -36,6 +36,9 @@ public class Depa {
         return "{" +
                 " nombre='" + getNombre() + "" +
                 "}";
+    }
+
+    public void setNombre(String string) {
     }
 
 }

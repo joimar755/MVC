@@ -15,5 +15,6 @@ public class App {
 
         Registro.setVisible(true);
         // f.setTitle("Registro");
+
     }
 }

@@ -1,5 +1,6 @@
 package vista;
 
+import java.io.File;
 import java.io.IOException;
 
 import javax.swing.*;
@@ -9,6 +10,8 @@ import com.toedter.calendar.JDateChooser;
 import Controller.Controller_guardar;
 import Modelo.Depa;
 import Modelo.Json;
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.ObjectMapper;
 
 public class Frm_Registro extends JFrame {
     private Panel container;
@@ -24,6 +27,9 @@ public class Frm_Registro extends JFrame {
     private JComboBox municipio;
     private Controller_guardar controllerRegistrar;
     private JDateChooser calendar;
+    ObjectMapper mapper = new ObjectMapper();
+    JsonNode root = mapper.readTree(new File("Depa.json"));
+    JsonNode options = root.path("Departamentos");
 
     public Frm_Registro() throws IOException {
         setSize(800, 530);
@@ -117,11 +123,10 @@ public class Frm_Registro extends JFrame {
     }
 
     public void Listas(JPanel container) throws IOException {
-        Depa de = new Depa();
+        // Depa de = new Depa();
         Json j = new Json();
-        j.JsonFile();
+
         String[] Sexo = { "Seleccione una opcion", "Masculino", "Femenino" };
-        String[] Depa = { "Seleccione", "Atlantico" };
         String[] Muni = { "Seleccione", "Barranquilla" };
         JLabel genero = new JLabel("Genero: ");
         Genero = new JComboBox<>(Sexo);
@@ -132,11 +137,20 @@ public class Frm_Registro extends JFrame {
         d.setBounds(70, 250, 200, 25);
         departamento = new JComboBox<String>();
 
-        for (String items : de.getNombre()) {
-            departamento.addItem(items);
+        /*
+         * for (String items : de.getNombre()) {
+         * departamento.addItem(items);
+         * }
+         */
+        departamento.addItem("seleccione");
+        for (JsonNode option : options) {
+            String name = option.path("nombre").asText();
+            // System.out.println(name);
+            departamento.addItem(name);
+
         }
 
-        departamento.setBounds(70, 270, 100, 25);
+        departamento.setBounds(70, 270, 150, 25);
         JLabel m = new JLabel("municipio: ");
         m.setBounds(250, 250, 200, 25);
         municipio = new JComboBox<>(Muni);

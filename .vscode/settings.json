@@ -5,6 +5,13 @@
     "java.project.referencedLibraries": [
         "lib/**/*.jar",
         "jcalendar-1.4.jar",
-        "gson-2.8.2.jar"
-    ]
+        "gson-2.8.2.jar",
+        "json-simple-1.1.1.jar",
+        "items.jar",
+        "com.fasterxml.jackson.databind.jar",
+        "jackson-annotations-2.14.1.jar",
+        "jackson-core-2.14.1.jar",
+        "jackson-databind-2.14.1.jar"
+    ],
+    "java.dependency.syncWithFolderExplorer": false
 }
